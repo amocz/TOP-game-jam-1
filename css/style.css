@@ -44,6 +44,11 @@ h1 {
     transition: all 0.4s;
 }
 
+.word {
+    position: absolute;
+    
+}
+
 .hole.up .mole{
     top:0;
 }

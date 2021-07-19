@@ -11,18 +11,23 @@ let moleTimeOut;
 let gameTimeOut;
 let score = 0;
 let time = 10; //10s game
+let li = difficulty(dif);
 startButton.addEventListener('click', startGame);
 moles.forEach(mole => mole.addEventListener('click', whack));
 
 function createHoles(num){
     for(let i=0; i<num; i++){
         let hole = document.createElement('div');
+        let word = document.createElement('div');
         let holeClass = 'hole' + i;
+        let wordClass = 'word' + i;
         hole.classList.add('hole', holeClass);
+        word.classList.add('word', wordClass);
         let mole = document.createElement('div');
         mole.classList.add('mole');
         hole.appendChild(mole);
         container.appendChild(hole);
+        container.appendChild(word);
     }
 }
 
@@ -91,4 +96,39 @@ function countDown(){
         if (timeLeft <= 0)
             clearInterval(countDownTimer);
     }, 1000);
+}
+
+function difficulty(dif){
+    if (dif == 'easy') {
+        return ['all', 'and', 'act', 'ago', 'add', 'aid', 'age', 'tag', 'cat', 'dog', 'cap', 'car', 'rag', 'leg', 'arm', 'bed', 'red', 
+        'pan', 'fat', 'rat', 'bat', 'wit', 'pig', 'bee', 'web', 'rug', 'mug', 'nod', 'hen', 'mad', 'pad', 'dad', 'mom', 'vet', 'wet', 
+        'pat', 'pay', 'fit', 'log', 'run', 'hit', 'rad', 'man', 'fed', 'led', 'fun', 'ton', 'pen', 'rod', 'mod', 'fall', 'pond', 'duck', 
+        'long', 'kite', 'girl', 'male', 'tail', 'wall', 'tall', 'mall', 'star', 'leaf', 'book', 'bird', 'took', 'toll', 'mole', 'rail', 
+        'bell', 'well', 'drum', 'plum', 'hand', 'feet', 'pace', 'made', 'mage', 'wage', 'nail', 'mama', 'papa', 'wack', 'malt', 'navy', 
+        'near', 'neat', 'need', 'pass', 'part', 'ruby', 'runt', 'rank', 'raft', 'quiz', 'quit', 'wilt', 'tilt', 'ramp', 'rage'];
+    } else if (dif == 'medium') {
+        return ['fall', 'pond', 'duck', 'long', 'kite', 'girl', 'male', 'tail', 'wall', 'tall', 'mall', 'star', 'leaf', 'book', 'bird', 
+        'took', 'toll', 'mole', 'rail', 'bell', 'well', 'drum', 'plum', 'hand', 'feet', 'pace', 'made', 'mage', 'wage', 'nail', 'mama', 
+        'papa', 'wack', 'malt', 'navy', 'near', 'neat', 'need', 'pass', 'part', 'ruby', 'runt', 'rank', 'raft', 'quiz', 'quit', 'wilt', 
+        'tilt', 'ramp', 'rage', 'address', 'earth', 'exercise', 'experience', 'experiment', 'notice', 'naughty', 'business', 'favorite', 
+        'actually', 'group', 'guard', 'guide', 'particular', 'surprise', 'suppose', 'strength', 'fruit', 'occasionally', 'straight', 'recent', 
+        'questions', 'quarter', 'purpose', 'promise', 'probably', 'pressure', 'length', 'library', 'difficult', 'important', 'imagine', 'possible', 
+        'potatoes', 'woman', 'throughout', 'thought', 'through', 'various', 'therefore', 'decide', 'describe', 'complete', 'circle', 'century', 
+        'centre', 'busy', 'worried', 'decision', 'incriminated'];
+    } else if (dif == 'hard') {
+        return ['address', 'earth', 'exercise', 'experience', 'experiment', 'notice', 'naughty', 'business', 'favorite', 'actually', 'group', 'guard', 
+        'guide', 'particular', 'surprise', 'suppose', 'strength', 'fruit', 'occasionally', 'straight', 'recent', 'questions', 'quarter', 'purpose', 'promise', 
+        'probably', 'pressure', 'length', 'library', 'difficult', 'important', 'imagine', 'possible', 'potatoes', 'woman', 'throughout', 'thought', 'through', 
+        'various', 'therefore', 'decide', 'describe', 'complete', 'circle', 'century', 'centre', 'busy', 'worried', 'decision', 'incriminated', 'depth', 'forgetting', 
+        'entire', 'horizon', 'fright', 'muscle', 'environment', 'controversy', 'awkward', 'vulnerable', 'deterrent', 'cameos', 'malicious', 'obscure', 'propeller', 
+        'surmise', 'annoyance', 'vessel', 'insufficient', 'protein', 'unbelievable', 'unduly', 'applicant', 'machinery', 'laboratory', 'escalator', 'embargo', 'outrageous', 
+        'honorary', 'minimize', 'contrary', 'vertigo', 'malady', 'rectangular', 'privilege', 'shuddering', 'precipitate', 'internally', 'perceived', 'mercenary', 'arrangement', 
+        'vivacious', 'vacillate', 'phenomenon', 'potpourri', 'caricature', 'surveillance', 'metamorphosis', 'omnipotent', 'unenforceable'];
+    }
+    
+}
+
+function chooseWord(li){
+    let wordPos = Math.floor(Math.random() * 100);
+    return li[wordPos];
 }
