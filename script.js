@@ -2,6 +2,7 @@ let scoreboard = document.querySelector('.scoreboard');
 let timer = document.querySelector('.timer');
 let startButton = document.querySelector('.start');
 let container = document.querySelector('#container');
+let li = difficulty(dif);
 createHoles(6);
 let holes = document.querySelectorAll('.hole');
 let moles = document.querySelectorAll('.mole');
@@ -11,7 +12,7 @@ let moleTimeOut;
 let gameTimeOut;
 let score = 0;
 let time = 10; //10s game
-let li = difficulty(dif);
+
 startButton.addEventListener('click', startGame);
 moles.forEach(mole => mole.addEventListener('click', whack));
 
@@ -22,7 +23,8 @@ function createHoles(num){
         let holeClass = 'hole' + i;
         let wordClass = 'word' + i;
         hole.classList.add('hole', holeClass);
-        word.classList.add('word', wordClass);
+        word.classList.add('word');
+        word.textContent = chooseWord(li)
         let mole = document.createElement('div');
         mole.classList.add('mole');
         hole.appendChild(mole);
