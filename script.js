@@ -2,12 +2,12 @@ let scoreboard = document.querySelector('.scoreboard');
 let timer = document.querySelector('.timer');
 let startButton = document.querySelector('.start');
 let container = document.querySelector('#container');
-let li = difficulty(dif);
 createHoles(6);
 let holes = document.querySelectorAll('.hole');
 let moles = document.querySelectorAll('.mole');
 let lastHole;
 let timeUp = false;
+let difficulty = 'easy';
 let moleTimeOut;
 let gameTimeOut;
 let score = 0;
@@ -19,14 +19,12 @@ moles.forEach(mole => mole.addEventListener('click', whack));
 function createHoles(num){
     for(let i=0; i<num; i++){
         let hole = document.createElement('div');
-        let word = document.createElement('div');
         let holeClass = 'hole' + i;
-        let wordClass = 'word' + i;
         hole.classList.add('hole', holeClass);
-        word.classList.add('word');
-        word.textContent = chooseWord(li)
         let mole = document.createElement('div');
+        let word = document.createElement('div');
         mole.classList.add('mole');
+        word.classList.add('word');
         hole.appendChild(mole);
         container.appendChild(hole);
         container.appendChild(word);
@@ -55,7 +53,9 @@ function setRandomLetter(){
 function molesPoppingUp() {
     let time = setRandomTime(1000, 2000);
     let hole = setRandomHole();
+    let word = hole;
     hole.classList.add('up');
+    //word.textContent = chooseWord(difficulty)
     moleTimeOut = setTimeout(() => {
         hole.classList.remove('up');
         if (!timeUp) {
@@ -100,16 +100,16 @@ function countDown(){
     }, 1000);
 }
 
-function difficulty(dif){
+function chooseWord(diff){
     if (dif == 'easy') {
-        return ['all', 'and', 'act', 'ago', 'add', 'aid', 'age', 'tag', 'cat', 'dog', 'cap', 'car', 'rag', 'leg', 'arm', 'bed', 'red', 
+        li = ['all', 'and', 'act', 'ago', 'add', 'aid', 'age', 'tag', 'cat', 'dog', 'cap', 'car', 'rag', 'leg', 'arm', 'bed', 'red', 
         'pan', 'fat', 'rat', 'bat', 'wit', 'pig', 'bee', 'web', 'rug', 'mug', 'nod', 'hen', 'mad', 'pad', 'dad', 'mom', 'vet', 'wet', 
         'pat', 'pay', 'fit', 'log', 'run', 'hit', 'rad', 'man', 'fed', 'led', 'fun', 'ton', 'pen', 'rod', 'mod', 'fall', 'pond', 'duck', 
         'long', 'kite', 'girl', 'male', 'tail', 'wall', 'tall', 'mall', 'star', 'leaf', 'book', 'bird', 'took', 'toll', 'mole', 'rail', 
         'bell', 'well', 'drum', 'plum', 'hand', 'feet', 'pace', 'made', 'mage', 'wage', 'nail', 'mama', 'papa', 'wack', 'malt', 'navy', 
         'near', 'neat', 'need', 'pass', 'part', 'ruby', 'runt', 'rank', 'raft', 'quiz', 'quit', 'wilt', 'tilt', 'ramp', 'rage'];
     } else if (dif == 'medium') {
-        return ['fall', 'pond', 'duck', 'long', 'kite', 'girl', 'male', 'tail', 'wall', 'tall', 'mall', 'star', 'leaf', 'book', 'bird', 
+        li =  ['fall', 'pond', 'duck', 'long', 'kite', 'girl', 'male', 'tail', 'wall', 'tall', 'mall', 'star', 'leaf', 'book', 'bird', 
         'took', 'toll', 'mole', 'rail', 'bell', 'well', 'drum', 'plum', 'hand', 'feet', 'pace', 'made', 'mage', 'wage', 'nail', 'mama', 
         'papa', 'wack', 'malt', 'navy', 'near', 'neat', 'need', 'pass', 'part', 'ruby', 'runt', 'rank', 'raft', 'quiz', 'quit', 'wilt', 
         'tilt', 'ramp', 'rage', 'address', 'earth', 'exercise', 'experience', 'experiment', 'notice', 'naughty', 'business', 'favorite', 
@@ -118,7 +118,7 @@ function difficulty(dif){
         'potatoes', 'woman', 'throughout', 'thought', 'through', 'various', 'therefore', 'decide', 'describe', 'complete', 'circle', 'century', 
         'centre', 'busy', 'worried', 'decision', 'incriminated'];
     } else if (dif == 'hard') {
-        return ['address', 'earth', 'exercise', 'experience', 'experiment', 'notice', 'naughty', 'business', 'favorite', 'actually', 'group', 'guard', 
+        li =  ['address', 'earth', 'exercise', 'experience', 'experiment', 'notice', 'naughty', 'business', 'favorite', 'actually', 'group', 'guard', 
         'guide', 'particular', 'surprise', 'suppose', 'strength', 'fruit', 'occasionally', 'straight', 'recent', 'questions', 'quarter', 'purpose', 'promise', 
         'probably', 'pressure', 'length', 'library', 'difficult', 'important', 'imagine', 'possible', 'potatoes', 'woman', 'throughout', 'thought', 'through', 
         'various', 'therefore', 'decide', 'describe', 'complete', 'circle', 'century', 'centre', 'busy', 'worried', 'decision', 'incriminated', 'depth', 'forgetting', 
@@ -127,10 +127,7 @@ function difficulty(dif){
         'honorary', 'minimize', 'contrary', 'vertigo', 'malady', 'rectangular', 'privilege', 'shuddering', 'precipitate', 'internally', 'perceived', 'mercenary', 'arrangement', 
         'vivacious', 'vacillate', 'phenomenon', 'potpourri', 'caricature', 'surveillance', 'metamorphosis', 'omnipotent', 'unenforceable'];
     }
-    
-}
 
-function chooseWord(li){
     let wordPos = Math.floor(Math.random() * 100);
     return li[wordPos];
 }

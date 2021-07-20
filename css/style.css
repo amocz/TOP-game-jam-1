@@ -45,8 +45,8 @@ h1 {
 }
 
 .word {
-    position: absolute;
-    padding: 10px;
+    background-color: black;
+    
 }
 
 .hole.up .mole{
