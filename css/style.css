@@ -14,12 +14,7 @@ h1 {
     flex: 1 0 33.33%;
     overflow: hidden;
     position: relative;
-}
-
-.hole{
-    flex: 1 0 33.33%;
-    overflow: hidden;
-    position: relative;
+    margin: 30 30 30 30;
 }
 
 .hole:after{
@@ -45,8 +40,14 @@ h1 {
 }
 
 .word {
-    background-color: black;
-    
+    width: 10%;
+    height: 5%;
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    position: relative;
+    overflow: hidden;
+    flex-wrap: nowrap;
+
 }
 
 .hole.up .mole{

@@ -53,9 +53,10 @@ function setRandomLetter(){
 function molesPoppingUp() {
     let time = setRandomTime(1000, 2000);
     let hole = setRandomHole();
-    let word = hole;
+    let word = hole.nextElementSibling;
     hole.classList.add('up');
-    //word.textContent = chooseWord(difficulty)
+    word.textContent = chooseWord(difficulty)
+    console.log(word.textContent)
     moleTimeOut = setTimeout(() => {
         hole.classList.remove('up');
         if (!timeUp) {
@@ -101,14 +102,14 @@ function countDown(){
 }
 
 function chooseWord(diff){
-    if (dif == 'easy') {
+    if (diff == 'easy') {
         li = ['all', 'and', 'act', 'ago', 'add', 'aid', 'age', 'tag', 'cat', 'dog', 'cap', 'car', 'rag', 'leg', 'arm', 'bed', 'red', 
         'pan', 'fat', 'rat', 'bat', 'wit', 'pig', 'bee', 'web', 'rug', 'mug', 'nod', 'hen', 'mad', 'pad', 'dad', 'mom', 'vet', 'wet', 
         'pat', 'pay', 'fit', 'log', 'run', 'hit', 'rad', 'man', 'fed', 'led', 'fun', 'ton', 'pen', 'rod', 'mod', 'fall', 'pond', 'duck', 
         'long', 'kite', 'girl', 'male', 'tail', 'wall', 'tall', 'mall', 'star', 'leaf', 'book', 'bird', 'took', 'toll', 'mole', 'rail', 
         'bell', 'well', 'drum', 'plum', 'hand', 'feet', 'pace', 'made', 'mage', 'wage', 'nail', 'mama', 'papa', 'wack', 'malt', 'navy', 
         'near', 'neat', 'need', 'pass', 'part', 'ruby', 'runt', 'rank', 'raft', 'quiz', 'quit', 'wilt', 'tilt', 'ramp', 'rage'];
-    } else if (dif == 'medium') {
+    } else if (diff == 'medium') {
         li =  ['fall', 'pond', 'duck', 'long', 'kite', 'girl', 'male', 'tail', 'wall', 'tall', 'mall', 'star', 'leaf', 'book', 'bird', 
         'took', 'toll', 'mole', 'rail', 'bell', 'well', 'drum', 'plum', 'hand', 'feet', 'pace', 'made', 'mage', 'wage', 'nail', 'mama', 
         'papa', 'wack', 'malt', 'navy', 'near', 'neat', 'need', 'pass', 'part', 'ruby', 'runt', 'rank', 'raft', 'quiz', 'quit', 'wilt', 
@@ -117,7 +118,7 @@ function chooseWord(diff){
         'questions', 'quarter', 'purpose', 'promise', 'probably', 'pressure', 'length', 'library', 'difficult', 'important', 'imagine', 'possible', 
         'potatoes', 'woman', 'throughout', 'thought', 'through', 'various', 'therefore', 'decide', 'describe', 'complete', 'circle', 'century', 
         'centre', 'busy', 'worried', 'decision', 'incriminated'];
-    } else if (dif == 'hard') {
+    } else if (diff == 'hard') {
         li =  ['address', 'earth', 'exercise', 'experience', 'experiment', 'notice', 'naughty', 'business', 'favorite', 'actually', 'group', 'guard', 
         'guide', 'particular', 'surprise', 'suppose', 'strength', 'fruit', 'occasionally', 'straight', 'recent', 'questions', 'quarter', 'purpose', 'promise', 
         'probably', 'pressure', 'length', 'library', 'difficult', 'important', 'imagine', 'possible', 'potatoes', 'woman', 'throughout', 'thought', 'through', 
