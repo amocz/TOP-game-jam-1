@@ -40,10 +40,11 @@ h1 {
 }
 
 .word {
-    width: 10%;
-    height: 5%;
+    width: 20%;
+    height: 10%;
     color: black;
     font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
     position: relative;
     overflow: hidden;
     flex-wrap: nowrap;
