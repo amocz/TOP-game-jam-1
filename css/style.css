@@ -1,5 +1,9 @@
+body {
+    background: url("../assets/tileset.png") repeat;
+}
+
 h1 {
-    color: red;
+    color: #5b2f13;
 }
 
 #container {
@@ -53,4 +57,136 @@ h1 {
 
 .hole.up .mole{
     top:0;
+}
+
+.word.up {
+    display:none;
+}
+
+#start_button{
+    height: 10vw;
+    width: 20vw;
+    font-size:  30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:  #ffebcd;
+    background-color: #cdc673;
+    border-color: #cdc673;
+    border-radius: 20%;
+    position: absolute;
+    left:  40vw;
+    top:  35vh;
+}
+
+#start_button:hover {
+    background-color: #1f5514;
+    border-color: #1f5514;
+    color: #cdc673;
+}
+
+#how_toButton{
+    height: 5vw;
+    width: 15vw;
+    font-size:  30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:  #ffebcd;
+    background-color: #cdc673;
+    border-color: #cdc673;
+    border-radius: 10%;
+    position: absolute;
+    left:  42.5vw;
+    top:  56vh;
+}
+
+#how_toButton:hover{
+    background-color: #1f5514;
+    border-color: #1f5514;
+    color: #cdc673;
+}
+
+.div_head{
+    position: absolute;
+    left:  40vw;
+    top:  45vh;
+}
+
+.reset_button{
+    height: 10vw;
+    width: 20vw;
+    font-size:  30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:  #ffebcd;
+    background-color: #cdc673;
+    border-color: #cdc673;
+    border-radius: 20%;
+}
+
+.reset_button:hover{
+    background-color: #1f5514;
+    border-color: #1f5514;
+    color: #cdc673;
+}
+
+#easy_button{
+	height: 10vw;
+	width: 15vw;
+	font-size:  30px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color:  #ffebcd;
+	background-color: #cdc673;
+	border-color: #cdc673;
+    border-radius: 20%;
+	position: absolute;
+	left:  25vw;
+	top:  70vh;
+}
+
+#easy_button:hover{
+    background-color: #1f5514;
+    border-color: #1f5514;
+    color: #cdc673;
+}
+
+#medium_button{
+	height: 10vw;
+	width: 15vw;
+	font-size:  30px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color:  #ffebcd;
+	background-color: #cdc673;
+	border-color: #cdc673;
+    border-radius: 20%;
+	position: absolute;
+	left:  42.5vw;
+	top:  70vh;
+}
+
+#medium_button:hover{
+    background-color: #1f5514;
+    border-color: #1f5514;
+    color: #cdc673;
+}
+
+#hard_button{
+	height: 10vw;
+	width: 15vw;
+	font-size:  30px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color:  #ffebcd;
+	background-color: #cdc673;
+	border-color: #cdc673;
+    border-radius: 20%;
+	position: absolute;
+	left:  60vw;
+	top:  70vh;
+}
+#hard_button:hover{
+    background-color: #1f5514;
+    border-color: #1f5514;
+    color: #cdc673;
 }
