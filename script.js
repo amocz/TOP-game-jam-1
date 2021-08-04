@@ -28,6 +28,7 @@ let startButton = document.querySelector('.start');
 let container = document.querySelector('#container');
 let pre_container = document.querySelector('.pre_container');
 let mainBody = document.querySelector('.body');
+let inp_container = document.querySelector('#container_inp');
 
 function createScore(){
     scoreboard = document.createElement('h2');
@@ -69,6 +70,7 @@ function createHoles(num){
         let word = document.createElement('div');
         mole.classList.add('mole');
         word.classList.add('word');
+       // mole.appendChild(word);
         hole.appendChild(mole);
         //hole.appendChild(word);
         container.appendChild(hole);
@@ -123,10 +125,11 @@ function startGame() {
         //Removing previous game state (regardless of whether there was a gamestate running prior)
         container.remove();
         pre_container.remove();
+        inp_container.remove();
 
         //Creating new game state
         pre_container = document.createElement("div");
-        container.classList.add("pre_container");
+        pre_container.classList.add("pre_container");
         document.body.appendChild(pre_container);
 
         //Creating new scores
@@ -134,11 +137,15 @@ function startGame() {
         container.setAttribute('id','container');
         document.body.appendChild(container);
 
+        inp_container = document.createElement("div");
+        inp_container.setAttribute('id','container_inp');
+        document.body.appendChild(inp_container);
+
 
     createHoles(6);
     var inp = document.createElement("INPUT");
     //inp.setAttribute("value", "Hello World!");
-    container.appendChild(inp);
+    inp_container.appendChild(inp);
 
 holes = document.querySelectorAll('.hole');
 moles = document.querySelectorAll('.mole');
@@ -194,6 +201,7 @@ function endGame() {
     console.log("clicked reset button");
     container.remove();
     pre_container.remove();
+    inp_container.remove();
     reset_button.remove();
 start_game_area.disabled = "false";
 start_game_area.style.display = "block";
