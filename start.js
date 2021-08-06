@@ -9,6 +9,8 @@ const medium_ = document.querySelector('.medium');
 const mediumButton = document.querySelector('#medium_button')
 const hard_ = document.querySelector('.hard');
 const hardButton = document.querySelector('#hard_button')
+   
+
 //let pre_container = document.querySelector('.pre_container');
 
 

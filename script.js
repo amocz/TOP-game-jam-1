@@ -22,13 +22,33 @@ var timer;
 
 
 
-
+let musicCheck = false;
 
 let startButton = document.querySelector('.start');
 let container = document.querySelector('#container');
 let pre_container = document.querySelector('.pre_container');
 let mainBody = document.querySelector('.body');
 let inp_container = document.querySelector('#container_inp');
+let musicButton = document.querySelector('#audioButton');
+let backgroundMusic = document.querySelector('#backmusic');
+
+musicButton.addEventListener('click', () =>{
+    if(!musicCheck){
+            backgroundMusic.play();
+    musicButton.textContent = "On";
+    musicCheck = true;
+    musicButton.style.backgroundColor = "green";
+    }
+
+    else{
+        backgroundMusic.pause();
+    musicButton.textContent = "Off";
+    musicCheck = false;
+    musicButton.style.backgroundColor = "red";
+    }
+
+
+})
 
 function createScore(){
     scoreboard = document.createElement('h2');
