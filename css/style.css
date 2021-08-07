@@ -1,29 +1,52 @@
-body {
+html {
+    min-height: 100%;
+
+    background-repeat: no-repeat;
+     overflow: -moz-scrollbars-none; 
+     -ms-overflow-style: none; 
+
+
+}
+
+   ::-webkit-scrollbar { width: 0;
+   height:0 !important }
+
+#titleSpace{
+    width: 100vw;
+}
+body{
+
+min-height: 100%;
     background: url("../assets/tileset.png") repeat;
 }
 
 h1 {
     color: black;
     font-family: 'Press Start 2P', cursive;
-    font-size: 3vw;
-    margin-left: 30vw;
-    width: 40vw;
+    font-size: 4vw;
+    margin-left: 25vw;
+    width: 50vw;
     text-align: center;
     margin-top: 5vh;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 #audioButton {
     color: white;
     font-family: 'Press Start 2P', cursive;
     font-size: 1vw;
-    margin-left: 45vw;
+    margin-left: 5vw;
     width: 10vw;
     text-align: center;
-    margin-top: 1vh;
+    align-content: center;
     cursor:pointer;
     background-color: red;
     padding-top: 1vh;
     padding-bottom: 1vh;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -5vh;
 }
 
 #container {
@@ -32,10 +55,28 @@ h1 {
     display:flex;
     flex-wrap: wrap;
     flex-direction: column;
+    margin-top: 5vh;
 
  
     text-align: center;
 }
+
+#container_after_score {
+    width: 40vw;
+    margin-left: 30vw;
+    text-align: center;
+    margin-top: 5vh;
+
+}
+
+#container_after_buttons {
+    width: 20vw;
+    margin-left: 40vw;
+    align-content: center;
+    margin-top: 5vh;
+
+}
+
 
 .pre_container{
     width: 100vw;
@@ -45,7 +86,7 @@ h1 {
 #container_inp {
     height: 20vh;
     width: 100vw;
-    left: ;
+
 }
 
 input {
@@ -58,6 +99,32 @@ input {
     font-family: 'Press Start 2P', cursive;
     font-size: 30px;
 }
+
+h2{
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
+}
+
+h3{
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
+    position: absolute;
+    top: 70vh;
+}
+.scoreboard{
+     display: inline-block;
+    vertical-align: middle;
+    width: 20vw;
+}
+
+.timer{
+     display: inline-block;
+    vertical-align: middle;
+    width: 20vw;
+}
+
 .hole {
     flex: 1 0 30%;
     overflow: hidden;
@@ -164,7 +231,8 @@ input {
 
 .reset_button{
     height: 10vw;
-    width: 20vw;
+      width: 100%;
+  display: block;
     font-size:  30px;
     font-weight: bold;
     text-transform: uppercase;
@@ -172,6 +240,7 @@ input {
     background-color: #cdc673;
     border-color: #cdc673;
     border-radius: 20%;
+    margin-top: 5vh;
 }
 
 .reset_button:hover{
@@ -180,19 +249,52 @@ input {
     color: #cdc673;
 }
 
-#easy_button{
-	height: 10vw;
-	width: 15vw;
-	font-size:  30px;
-	font-weight: bold;
-	text-transform: uppercase;
-	color:  #ffebcd;
-	background-color: #cdc673;
-	border-color: #cdc673;
+.restart_button{
+    height: 10vw;
+      width: 100%;
+  display: block;
+    font-size:  30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color:  #ffebcd;
+    background-color: #cdc673;
+    border-color: #cdc673;
     border-radius: 20%;
+    margin-top: 5vh;
+}
+
+.restart_button:hover{
+    background-color: #1f5514;
+    border-color: #1f5514;
+    color: #cdc673;
+}
+
+#chooseDifficulty{
+    width: 60vw;
+    text-align: center;
+    margin-left: 20vw;
+
+}
+button{
+    background-color:  transparent;
+    border-color: transparent;
+}
+
+#easy_button{
+	height: 5vw;
+	width: 10vw;
+	color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
+
+
+	/*background-color: #cdc673;
+	border-color: #cdc673;
+    border-radius: 20%;*/
 	position: absolute;
-	left:  25vw;
+	left:  50vw;
 	top:  70vh;
+    display: inline-block;
 }
 
 #easy_button:hover{
@@ -202,18 +304,18 @@ input {
 }
 
 #medium_button{
-	height: 10vw;
-	width: 15vw;
-	font-size:  30px;
-	font-weight: bold;
-	text-transform: uppercase;
-	color:  #ffebcd;
-	background-color: #cdc673;
-	border-color: #cdc673;
-    border-radius: 20%;
+	height: 5vw;
+    width: 10vw;
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
+
+
+
 	position: absolute;
-	left:  42.5vw;
+	left:  62.5vw;
 	top:  70vh;
+    display: inline-block;
 }
 
 #medium_button:hover{
@@ -223,21 +325,22 @@ input {
 }
 
 #hard_button{
-	height: 10vw;
-	width: 15vw;
-	font-size:  30px;
-	font-weight: bold;
-	text-transform: uppercase;
-	color:  #ffebcd;
-	background-color: #cdc673;
-	border-color: #cdc673;
-    border-radius: 20%;
+	height: 5vw;
+    width: 10vw;
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
+
+
+
 	position: absolute;
-	left:  60vw;
+	left:  75vw;
 	top:  70vh;
+    display: inline-block;
 }
 #hard_button:hover{
     background-color: #1f5514;
     border-color: #1f5514;
     color: #cdc673;
 }
+

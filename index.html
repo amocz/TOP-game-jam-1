@@ -10,13 +10,16 @@
   </head>
   <body>
  
-    <audio id = "backmusic" > 
+    <audio id = "backmusic" loop > 
         <source src="background.mp3" type="audio/mp3">
     </audio>
-    <div id="audioButton"> Off </div>
+    <div id="titleSpace">
     <h1>
         Whack-a-Mole
     </h1>
+    <div id="audioButton"> Off </div>
+  </div>
+    
     <div class = "pre_container"> </div>
      <!--<h2 class="scoreboard">Score</h2>-->
     <!--<h2 class="timer">Timer:</h2>-->
@@ -30,7 +33,7 @@
   <div class ="how_to">
     <button id ="how_toButton"> How to Play</button>
   </div>
-
+  <div id="chooseDifficulty"> <h3> Choose Difficulty: </h3> 
   <div class ="easy">
   <button id ="easy_button"> Easy</button>
   </div>
@@ -40,6 +43,7 @@
   <div class ="hard">
   <button id ="hard_button"> Hard</button>
   </div>
+</div>
     <script src="start.js"></script>
     <script src="script.js"></script>
   </body>

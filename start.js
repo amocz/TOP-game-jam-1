@@ -26,28 +26,100 @@ const hardButton = document.querySelector('#hard_button')
 //});
 
 let difficulty = "easy";
+easyButton.style.color = "white";
+easyButton.style.borderColor = "#cdc673";
+easyButton.style.backgroundColor = "#cdc673"
+
+
+easyButton.addEventListener("mouseenter",() =>{
+    if(difficulty != "easy"){
+    easyButton.style.backgroundColor = "#1f5514";
+    easyButton.style.color = "#cdc673";
+    }
+});
+
+    easyButton.addEventListener("mouseleave",() =>{
+    if(difficulty != "easy"){
+    easyButton.style.backgroundColor = "transparent";
+    easyButton.style.color = "black";}
+});
+
+
+    mediumButton.addEventListener("mouseenter",() =>{
+    if(difficulty != "medium"){
+    mediumButton.style.backgroundColor = "#1f5514";
+    mediumButton.style.color = "#cdc673";}
+});
+
+    mediumButton.addEventListener("mouseleave",() =>{
+    if(difficulty != "medium"){
+    mediumButton.style.backgroundColor = "transparent";
+    mediumButton.style.color = "black";}
+});
+
+    hardButton.addEventListener("mouseenter",() =>{
+    if(difficulty != "hard"){
+    hardButton.style.backgroundColor = "#1f5514";
+    hardButton.style.color = "#cdc673";}
+});
+
+    hardButton.addEventListener("mouseleave",() =>{
+    if(difficulty != "hard"){
+    hardButton.style.backgroundColor = "transparent";
+    hardButton.style.color = "black";}
+});
+
 
 easyButton.addEventListener("click",() =>{
     difficulty = "easy";
-    easyButton.style.borderColor = "brown";
-    mediumButton.style.borderColor = "white";
-    hardButton.style.vColor = "white";
-})
+    easyButton.style.color = "white";
+    mediumButton.style.color = "black";
+    hardButton.style.color = "black";
+    easyButton.style.borderColor = "#cdc673";
+    easyButton.style.backgroundColor = "#cdc673"
+    mediumButton.style.borderColor = "transparent";
+    mediumButton.style.backgroundColor = "transparent";
+    hardButton.style.borderColor = "transparent";
+    hardButton.style.backgroundColor = "transparent";
+
+    
+
+
+
+    /*background-color: #cdc673;
+    border-color: #cdc673;
+    border-radius: 20%;*/
+});
 
 mediumButton.addEventListener("click",() =>{
     difficulty = "medium";
-    easyButton.style.borderColor = "white";
-    mediumButton.style.borderColor = "brown";
-    hardButton.style.borderColor = "white";
+    easyButton.style.color = "black";
+    mediumButton.style.color = "white";
+    hardButton.style.color = "black";
+    easyButton.style.borderColor = "transparent";
+    easyButton.style.backgroundColor = "transparent";
+    mediumButton.style.borderColor = "#cdc673";
+    mediumButton.style.backgroundColor = "#cdc673";
+    hardButton.style.borderColor = "transparent";
+    hardButton.style.backgroundColor = "transparent";
 
-})
+
+});
 
 hardButton.addEventListener("click",() =>{
     difficulty = "hard";
-    easyButton.style.borderColor = "white";
-    mediumButton.style.borderColor = "white";
-    hardButton.style.borderColor = "brown";
-})
+    easyButton.style.color = "black";
+    mediumButton.style.color = "black";
+    hardButton.style.color = "white";
+    easyButton.style.borderColor = "transparent";
+    easyButton.style.backgroundColor = "transparent";
+    mediumButton.style.borderColor = "transparent";
+    mediumButton.style.backgroundColor = "transparent";
+    hardButton.style.borderColor = "#cdc673";
+    hardButton.style.backgroundColor = "#cdc673";
+
+    
+});
 
 
 
@@ -60,6 +132,8 @@ start_game_button.addEventListener("click",() =>{
     start_game_area.style.display = "none";
     how_to_play.disabled = "true";
     how_to_play.style.display = "none";
+    chooseDifficulty.disabled = "true";
+    chooseDifficulty.style.display = "none";
     easyButton.style.display = "none";
     mediumButton.style.display = "none";
     hardButton.style.display = "none";

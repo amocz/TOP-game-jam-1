@@ -209,10 +209,42 @@ time = 60; //10s game
 
 function endGame() {
     timeUp = true;
+
+    container.remove();
+    inp_container.remove();
+    pre_container.remove();
+
+    container = document.createElement("div");
+    container.setAttribute('id','container_after_score');
+    document.body.appendChild(container);
+
+    let container_after_buttons = document.createElement("div");
+    container_after_buttons.setAttribute('id','container_after_buttons');
+    document.body.appendChild(container_after_buttons);     
+
+    let restart_button = document.createElement("button");
+    restart_button.textContent = "Play Again";
+    restart_button.classList.add("restart_button");
+    container_after_buttons.appendChild(restart_button); 
+
     let reset_button = document.createElement("button");
     reset_button.textContent = "back to Main Menu";
     reset_button.classList.add("reset_button");
-    pre_container.appendChild(reset_button);
+    container.appendChild(scoreboard);
+    container_after_buttons.appendChild(reset_button);
+
+    restart_button.addEventListener("click",()=>{
+    console.log("clicked restart button");
+    container.remove();
+    container_after_buttons.remove();
+    pre_container.remove();
+    inp_container.remove();
+    reset_button.remove();
+    restart_button.remove();
+    startGame();
+});
+    
+
 
     //give reset button functionality
     //Remove the newly created div (game scene) and remove itself
@@ -220,6 +252,7 @@ function endGame() {
     reset_button.addEventListener("click",()=>{
     console.log("clicked reset button");
     container.remove();
+    container_after_buttons.remove();
     pre_container.remove();
     inp_container.remove();
     reset_button.remove();
@@ -227,7 +260,8 @@ start_game_area.disabled = "false";
 start_game_area.style.display = "block";
 how_to_play.disabled = "false";
 how_to_play.style.display = "block";
-
+chooseDifficulty.disabled = "false";
+chooseDifficulty.style.display = "block";
 easyButton.style.display = "block";
 mediumButton.style.display = "block";
 hardButton.style.display = "block";
