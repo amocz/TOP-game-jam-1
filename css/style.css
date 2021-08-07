@@ -23,7 +23,7 @@ min-height: 100%;
 h1 {
     color: black;
     font-family: 'Press Start 2P', cursive;
-    font-size: 4vw;
+    font-size: 3vw;
     margin-left: 25vw;
     width: 50vw;
     text-align: center;
@@ -51,7 +51,7 @@ h1 {
 
 #container {
     width: 100vw;
-    height: 60vh;
+    height: 50vh;
     display:flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -98,6 +98,10 @@ input {
     color: black;
     font-family: 'Press Start 2P', cursive;
     font-size: 30px;
+}
+
+::placeholder{
+    color: #c9c7b1;
 }
 
 h2{
@@ -182,11 +186,11 @@ h3{
 }
 
 #start_button{
-    height: 10vw;
+    height: 15vh;
     width: 20vw;
-    font-size:  30px;
-    font-weight: bold;
-    text-transform: uppercase;
+   color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
     color:  #ffebcd;
     background-color: #cdc673;
     border-color: #cdc673;
@@ -203,11 +207,11 @@ h3{
 }
 
 #how_toButton{
-    height: 5vw;
+    height: 10vh;
     width: 15vw;
-    font-size:  30px;
-    font-weight: bold;
-    text-transform: uppercase;
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1vw;
     color:  #ffebcd;
     background-color: #cdc673;
     border-color: #cdc673;
@@ -285,7 +289,7 @@ button{
 	width: 10vw;
 	color: black;
     font-family: 'Press Start 2P', cursive;
-    font-size: 1.5vw;
+    font-size: 1vw;
 
 
 	/*background-color: #cdc673;
@@ -308,7 +312,7 @@ button{
     width: 10vw;
     color: black;
     font-family: 'Press Start 2P', cursive;
-    font-size: 1.5vw;
+    font-size: 1vw;
 
 
 
@@ -329,7 +333,7 @@ button{
     width: 10vw;
     color: black;
     font-family: 'Press Start 2P', cursive;
-    font-size: 1.5vw;
+    font-size: 1vw;
 
 
 
@@ -343,4 +347,6 @@ button{
     border-color: #1f5514;
     color: #cdc673;
 }
+
+
 

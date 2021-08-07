@@ -159,12 +159,17 @@ function startGame() {
 
         inp_container = document.createElement("div");
         inp_container.setAttribute('id','container_inp');
+
         document.body.appendChild(inp_container);
 
 
     createHoles(6);
     var inp = document.createElement("INPUT");
     //inp.setAttribute("value", "Hello World!");
+    inp.setAttribute('placeholder', 'Type the words here...')
+    inp.style.backgroundColor = "#1f5514";
+    inp.style.borderColor = "#1f5514";
+    inp.style.color = "#cdc673";
     inp_container.appendChild(inp);
 
 holes = document.querySelectorAll('.hole');
