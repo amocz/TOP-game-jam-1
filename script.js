@@ -22,7 +22,10 @@ var timer;
 
 
 
+
 let musicCheck = false;
+
+
 
 let startButton = document.querySelector('.start');
 let container = document.querySelector('#container');
@@ -30,26 +33,45 @@ let pre_container = document.querySelector('.pre_container');
 let mainBody = document.querySelector('.body');
 let inp_container = document.querySelector('#container_inp');
 let musicButton = document.querySelector('#audioButton');
+let sfxButton = document.querySelector('#audioButton2');
 let backgroundMusic = document.querySelector('#backmusic');
 
 musicButton.addEventListener('click', () =>{
     if(!musicCheck){
         backgroundMusic.volume = 0.5;
             backgroundMusic.play();
-    musicButton.textContent = "On";
+    musicButton.textContent = "Background Music: On";
     musicCheck = true;
     musicButton.style.backgroundColor = "green";
     }
 
     else{
         backgroundMusic.pause();
-    musicButton.textContent = "Off";
+    musicButton.textContent = "Background Music: Off";
     musicCheck = false;
     musicButton.style.backgroundColor = "red";
     }
 
 
 })
+
+sfxButton.addEventListener('click', () =>{
+    if(!sfxCheck){
+
+
+    sfxButton.textContent = "SFX: On";
+    sfxCheck = true;
+    sfxButton.style.backgroundColor = "green";
+    }
+
+    else{
+
+
+    sfxButton.textContent = "SFX: Off";
+    sfxCheck = false;
+    sfxButton.style.backgroundColor = "red";
+    }
+    })
 
 function createScore(){
     scoreboard = document.createElement('h2');
@@ -123,8 +145,9 @@ function molesPoppingUp() {
     let hole = setRandomHole();
     let word = hole.nextElementSibling;
     hole.classList.add('up');
+    if(sfxCheck){
     let audio = document.getElementById('mole');
-    audio.play();
+    audio.play();}
     moles.forEach(mole => mole.style.backgroundImage = 'url("../TOP-game-jam-1/assets/mole_coin.png")');
     
     //word.classList.add('up');
@@ -213,14 +236,15 @@ time = 60; //10s game
         console.log("This is user input: " , userInp);
 
         if (userInp == wordCheck){
+            if(sfxCheck){
             let audio = document.getElementById('score');
     audio.play();
     let audio2 = document.getElementById('whack');
-    audio2.play();
+    audio2.play();}
             moles.forEach(mole => mole.style.backgroundImage = 'url("../TOP-game-jam-1/assets/mole_whack.png")');
             setTimeout(function () {
    moles.forEach(mole => mole.parentNode.classList.remove('up'));
-}, 100)
+}, 75)
            
             words.forEach(word => word.textContent = '');
             words.forEach(word => word.style.backgroundColor = 'transparent');
@@ -258,8 +282,9 @@ function endGame() {
     container_after_buttons.appendChild(reset_button);
 
     restart_button.addEventListener("click",()=>{
+        if(sfxCheck){
         let audio = document.getElementById('button');
-    audio.play();
+    audio.play();}
     console.log("clicked restart button");
     container.remove();
     container_after_buttons.remove();
@@ -276,8 +301,9 @@ function endGame() {
     //Remove the newly created div (game scene) and remove itself
     //Bring back the original start game button and its div
     reset_button.addEventListener("click",()=>{
+        if(sfxCheck){
         let audio = document.getElementById('button');
-    audio.play();
+    audio.play();}
     console.log("clicked reset button");
     container.remove();
     container_after_buttons.remove();

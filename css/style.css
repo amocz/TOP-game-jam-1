@@ -4,8 +4,9 @@ html {
     background-repeat: no-repeat;
      overflow: -moz-scrollbars-none; 
      -ms-overflow-style: none; 
-
-
+max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
    ::-webkit-scrollbar { width: 0;
@@ -15,12 +16,14 @@ html {
     width: 100vw;
 }
 body{
-
+max-width: 100%;
+    overflow-x: hidden;
 min-height: 100%;
     background: url("../assets/background_art.png");
      background-repeat: no-repeat;
      background-size: cover ;
      width: 120vw;
+     overflow-y: hidden;
 }
 
 h1 {
@@ -38,11 +41,11 @@ h1 {
 #audioButton {
     color: white;
     font-family: 'Press Start 2P', cursive;
-    font-size: 1vw;
-    margin-left: 5vw;
-    width: 10vw;
+    font-size: 0.5vw;
+
+    width: 12vw;
     text-align: center;
-    align-content: center;
+    align-content: left;
     cursor:pointer;
     background-color: red;
     padding-top: 1vh;
@@ -50,6 +53,65 @@ h1 {
     display: inline-block;
     vertical-align: middle;
     margin-top: -5vh;
+    margin-left: -1vw;
+}
+
+#audioButton2 {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.5vw;
+    width: 6vw;
+    text-align: center;
+    align-content: center;
+    cursor:pointer;
+    background-color: green;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -5vh;
+    margin-left: 3vw;
+}
+
+
+
+.how_to_play_area {
+    width: 90vw;
+    left: 5vw;
+    position: absolute;
+    top: 15vh;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
+    line-height: 4vh;
+ 
+    text-align: center;
+}
+
+.mole_example {
+    width: 90vw;
+
+    height: 25vh;
+    background-image: url("../assets/example.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+ 
+    text-align: center;
+}
+
+.input_example {
+    width: auto;
+
+    height: 10vh;
+    background-image: url("../assets/input_example.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+ 
+    text-align: center;
 }
 
 #container {
@@ -274,6 +336,27 @@ h3{
     background-size: contain;
     background-position: center;
 }
+
+.back_button{
+    height: 5vw;
+      width: 100%;
+  display: block;
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
+    margin-top: 5vh;
+    background: url("../assets/button.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor:pointer;
+}
+
+.back_button:hover{
+   background: url("../assets/button_hover.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
 
 .restart_button{
     height: 10vw;
