@@ -218,6 +218,7 @@ h3{
     background: url("../assets/button.png") no-repeat;
     background-size: contain;
     background-position: center;
+    cursor:pointer;
 }
 
 #start_button:hover {
@@ -239,6 +240,7 @@ h3{
     background: url("../assets/button.png") no-repeat;
     background-size: contain;
     background-position: center;
+    cursor:pointer;
 }
 
 #how_toButton:hover{
@@ -264,6 +266,7 @@ h3{
     background: url("../assets/button.png") no-repeat;
     background-size: contain;
     background-position: center;
+    cursor:pointer;
 }
 
 .reset_button:hover{
@@ -283,6 +286,7 @@ h3{
     background: url("../assets/button.png") no-repeat;
     background-size: contain;
     background-position: center;
+    cursor:pointer;
 }
 
 .restart_button:hover{
@@ -295,6 +299,7 @@ h3{
     width: 60vw;
     text-align: center;
     margin-left: 20vw;
+
 
 }
 button{
@@ -317,6 +322,7 @@ button{
 	left:  50vw;
 	top:  60vh;
     display: inline-block;
+    cursor:pointer;
 }
 
 #easy_button:hover{
@@ -336,6 +342,7 @@ button{
 	left:  62.5vw;
 	top:  60vh;
     display: inline-block;
+    cursor:pointer;
 }
 
 #medium_button:hover{
@@ -355,6 +362,7 @@ button{
 	left:  75vw;
 	top:  60vh;
     display: inline-block;
+    cursor:pointer;
 }
 #hard_button:hover{
  

@@ -34,6 +34,7 @@ let backgroundMusic = document.querySelector('#backmusic');
 
 musicButton.addEventListener('click', () =>{
     if(!musicCheck){
+        backgroundMusic.volume = 0.5;
             backgroundMusic.play();
     musicButton.textContent = "On";
     musicCheck = true;
@@ -122,6 +123,8 @@ function molesPoppingUp() {
     let hole = setRandomHole();
     let word = hole.nextElementSibling;
     hole.classList.add('up');
+    let audio = document.getElementById('mole');
+    audio.play();
     moles.forEach(mole => mole.style.backgroundImage = 'url("../TOP-game-jam-1/assets/mole_coin.png")');
     
     //word.classList.add('up');
@@ -210,7 +213,10 @@ time = 60; //10s game
         console.log("This is user input: " , userInp);
 
         if (userInp == wordCheck){
-
+            let audio = document.getElementById('score');
+    audio.play();
+    let audio2 = document.getElementById('whack');
+    audio2.play();
             moles.forEach(mole => mole.style.backgroundImage = 'url("../TOP-game-jam-1/assets/mole_whack.png")');
             setTimeout(function () {
    moles.forEach(mole => mole.parentNode.classList.remove('up'));
@@ -252,6 +258,8 @@ function endGame() {
     container_after_buttons.appendChild(reset_button);
 
     restart_button.addEventListener("click",()=>{
+        let audio = document.getElementById('button');
+    audio.play();
     console.log("clicked restart button");
     container.remove();
     container_after_buttons.remove();
@@ -268,6 +276,8 @@ function endGame() {
     //Remove the newly created div (game scene) and remove itself
     //Bring back the original start game button and its div
     reset_button.addEventListener("click",()=>{
+        let audio = document.getElementById('button');
+    audio.play();
     console.log("clicked reset button");
     container.remove();
     container_after_buttons.remove();

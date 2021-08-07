@@ -79,6 +79,8 @@ easyButton.addEventListener("mouseenter",() =>{
 
 easyButton.addEventListener("click",() =>{
     difficulty = "easy";
+    let audio = document.getElementById('button');
+    audio.play();
     easyButton.style.backgroundImage = "url('../TOP-game-jam-1/assets/button.png')";
     easyButton.style.backgroundSize = "contain";
     easyButton.style.backgroundPosition = "center";
@@ -103,6 +105,8 @@ easyButton.addEventListener("click",() =>{
 
 mediumButton.addEventListener("click",() =>{
     difficulty = "medium";
+    let audio = document.getElementById('button');
+    audio.play();
     easyButton.style.color = "black";
     mediumButton.style.backgroundImage = "url('../TOP-game-jam-1/assets/button.png')";
     mediumButton.style.backgroundSize = "contain";
@@ -121,6 +125,8 @@ mediumButton.addEventListener("click",() =>{
 
 hardButton.addEventListener("click",() =>{
     difficulty = "hard";
+    let audio = document.getElementById('button');
+    audio.play();
     hardButton.style.backgroundImage = "url('../TOP-game-jam-1/assets/button.png')";
     hardButton.style.backgroundSize = "contain";
     hardButton.style.backgroundPosition = "center";
@@ -140,11 +146,32 @@ hardButton.addEventListener("click",() =>{
 });
 
 
+how_to_button.addEventListener("click",() =>{
+let audio = document.getElementById('button');
+    audio.play();
+    //Hide the intial start game button and disable that div
+    start_game_area.disabled = "true";
+    start_game_area.style.display = "none";
+    how_to_play.disabled = "true";
+  how_to_play.style.display = "none";
+    easyButton.style.display = "none";
+    mediumButton.style.display = "none";
+    hardButton.style.display = "none";
+    console.log("I clciked");
+    //Now create a new div where I have a line of text for example (will be replaced by a game scene maybe?)
+    //Then create a reset button
+const how_to_play_area = document.createElement("div");
+const how_to_play_text = document.createElement("h4");
+how_to_play_text.textContent = "When the mole appears,type the word below the mole to wack it to earn a point! Earn as many points as possible within the time limit!";
+how_to_play_area.appendChild (how_to_play_text);
+document.body.appendChild (how_to_play_area);
+});
 
 
 
 start_game_button.addEventListener("click",() =>{
-
+let audio = document.getElementById('button');
+    audio.play();
     //Hide the intial start game button and disable that div
     start_game_area.disabled = "true";
     start_game_area.style.display = "none";
