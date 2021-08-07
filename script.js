@@ -122,15 +122,22 @@ function molesPoppingUp() {
     let hole = setRandomHole();
     let word = hole.nextElementSibling;
     hole.classList.add('up');
+    moles.forEach(mole => mole.style.backgroundImage = 'url("../TOP-game-jam-1/assets/mole_coin.png")');
+    
     //word.classList.add('up');
     word.textContent = chooseWord(difficulty)
     console.log("this is word.textContent:" , word.textContent);
     wordCheck = word.textContent;
+    word.style.backgroundColor = 'white';
+    word.style.borderColor = "black";
+
     console.log("this is wordCheck:" , wordCheck);
     console.log(word.textContent)
     moleTimeOut = setTimeout(() => {
         hole.classList.remove('up');
         word.textContent = '';
+        word.style.backgroundColor = "transparent";
+
         var inputString = document.querySelector('INPUT');
         inputString.value = '';
         if (!timeUp) {
@@ -193,7 +200,7 @@ time = 60; //10s game
     }
     timeUp = false;
     score = 0;
-    scoreboard.textContent = `Score: ${score}`;
+    scoreboard.textContent = `Coins: ${score}`;
     countDown();
     molesPoppingUp();
     gameTimeOut = setTimeout(() => endGame(), 60000);
@@ -203,10 +210,16 @@ time = 60; //10s game
         console.log("This is user input: " , userInp);
 
         if (userInp == wordCheck){
-            moles.forEach(mole => mole.parentNode.classList.remove('up'));
+
+            moles.forEach(mole => mole.style.backgroundImage = 'url("../TOP-game-jam-1/assets/mole_whack.png")');
+            setTimeout(function () {
+   moles.forEach(mole => mole.parentNode.classList.remove('up'));
+}, 100)
+           
             words.forEach(word => word.textContent = '');
+            words.forEach(word => word.style.backgroundColor = 'transparent');
             score++;
-            scoreboard.textContent = `Score: ${score}`;
+            scoreboard.textContent = `Coins: ${score}`;
             inp.value = "";
         }
     })
@@ -233,7 +246,7 @@ function endGame() {
     container_after_buttons.appendChild(restart_button); 
 
     let reset_button = document.createElement("button");
-    reset_button.textContent = "back to Main Menu";
+    reset_button.textContent = "Main Menu";
     reset_button.classList.add("reset_button");
     container.appendChild(scoreboard);
     container_after_buttons.appendChild(reset_button);
@@ -277,7 +290,7 @@ function whack(e){
     if (!e.isTrusted) return; //Check if player cheated
     score++;
     this.parentNode.classList.remove('up');
-    scoreboard.textContent = `Score: ${score}`;
+    scoreboard.textContent = `Coins: ${score}`;
 }
 
 function countDown(){

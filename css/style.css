@@ -17,11 +17,14 @@ html {
 body{
 
 min-height: 100%;
-    background: url("../assets/tileset.png") repeat;
+    background: url("../assets/background_art.png");
+     background-repeat: no-repeat;
+     background-size: cover ;
+     width: 120vw;
 }
 
 h1 {
-    color: black;
+    color: white;
     font-family: 'Press Start 2P', cursive;
     font-size: 3vw;
     margin-left: 25vw;
@@ -51,11 +54,11 @@ h1 {
 
 #container {
     width: 100vw;
-    height: 50vh;
+    height: 40vh;
     display:flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin-top: 5vh;
+    margin-top: 10vh;
 
  
     text-align: center;
@@ -90,14 +93,15 @@ h1 {
 }
 
 input {
-    height: 10vh;
+    height: 8vh;
     width: 40vw;
     margin-left: 30vw;
     margin-top: 5vh;
     align-content: center;
     color: black;
     font-family: 'Press Start 2P', cursive;
-    font-size: 30px;
+    font-size: 1.5vw;
+    padding-left: 2vw;
 }
 
 ::placeholder{
@@ -108,25 +112,34 @@ h2{
     color: black;
     font-family: 'Press Start 2P', cursive;
     font-size: 1.5vw;
+    line-height: 11vh;
 }
 
 h3{
-    color: black;
+    color: white;
     font-family: 'Press Start 2P', cursive;
     font-size: 1.5vw;
     position: absolute;
-    top: 70vh;
+    top: 60vh;
 }
 .scoreboard{
      display: inline-block;
     vertical-align: middle;
-    width: 20vw;
+    width: 35vw;
+    height: 10vh;
+    background: url("../assets/scoreboard.png") no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .timer{
      display: inline-block;
     vertical-align: middle;
-    width: 20vw;
+    width: 35vw;
+    height: 10vh;
+    background: url("../assets/scoreboard.png") no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .hole {
@@ -134,7 +147,7 @@ h3{
     overflow: hidden;
     position: relative;
     margin: 0 auto;
-    width:  20%;
+    width:  30%;
     height: 100%;
     margin-bottom: 3vh;
 }
@@ -145,35 +158,42 @@ h3{
     background-size:contain;
     content: '';
     width: 100%;
-    height: 60%;
+    height: 120%;
     position: absolute;
     z-index: 2;
-    bottom: -30px;
+    bottom: -12vh;
     margin-bottom: 3vh;
 }
 
 .mole {
-    background: url("../assets/mole.png") bottom center no-repeat;
+    background: url("../assets/mole_coin.png") bottom center no-repeat;
     background-size: contain;
     position: absolute;
     top: 100%;
     width: 100%;
-    height: 100%;
-    transition: all 0.4s;
+    height: 105%;
+
+    transition: background-image 10s ease;
+    transition: top 0.5s;
     margin: 0 auto;
 }
 
 .word {
 
-    width: 20%;
+    width: auto;
+    padding-left: 2vw;
+    padding-right: 2vw;
     height: 10%;
     color: black;
+
+    padding-top: 1vh;
     font-family: 'Press Start 2P', cursive;
-    font-size: 30px;
+    font-size: 1.5vw;
     position: relative;
    
     margin: 0 auto;
     flex-wrap: nowrap;
+    text-align: center;
 
 }
 
@@ -191,19 +211,20 @@ h3{
    color: black;
     font-family: 'Press Start 2P', cursive;
     font-size: 1.5vw;
-    color:  #ffebcd;
-    background-color: #cdc673;
-    border-color: #cdc673;
-    border-radius: 20%;
+
     position: absolute;
     left:  40vw;
     top:  35vh;
+    background: url("../assets/button.png") no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 #start_button:hover {
-    background-color: #1f5514;
-    border-color: #1f5514;
-    color: #cdc673;
+
+    background: url("../assets/button_hover.png") no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 #how_toButton{
@@ -212,19 +233,18 @@ h3{
     color: black;
     font-family: 'Press Start 2P', cursive;
     font-size: 1vw;
-    color:  #ffebcd;
-    background-color: #cdc673;
-    border-color: #cdc673;
-    border-radius: 10%;
     position: absolute;
     left:  42.5vw;
-    top:  56vh;
+    top:  48vh;
+    background: url("../assets/button.png") no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 #how_toButton:hover{
-    background-color: #1f5514;
-    border-color: #1f5514;
-    color: #cdc673;
+    background: url("../assets/button_hover.png") no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .div_head{
@@ -237,40 +257,38 @@ h3{
     height: 10vw;
       width: 100%;
   display: block;
-    font-size:  30px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color:  #ffebcd;
-    background-color: #cdc673;
-    border-color: #cdc673;
-    border-radius: 20%;
+    color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
     margin-top: 5vh;
+    background: url("../assets/button.png") no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .reset_button:hover{
-    background-color: #1f5514;
-    border-color: #1f5514;
-    color: #cdc673;
+   background: url("../assets/button_hover.png") no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .restart_button{
     height: 10vw;
       width: 100%;
   display: block;
-    font-size:  30px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color:  #ffebcd;
-    background-color: #cdc673;
-    border-color: #cdc673;
-    border-radius: 20%;
+ color: black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vw;
     margin-top: 5vh;
+    background: url("../assets/button.png") no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 .restart_button:hover{
-    background-color: #1f5514;
-    border-color: #1f5514;
-    color: #cdc673;
+ background: url("../assets/button_hover.png") no-repeat;
+    background-size: contain;
+    background-position: center;
 }
 
 #chooseDifficulty{
@@ -285,11 +303,11 @@ button{
 }
 
 #easy_button{
-	height: 5vw;
-	width: 10vw;
+	height: 5vh;
+	width: 12vw;
 	color: black;
     font-family: 'Press Start 2P', cursive;
-    font-size: 1vw;
+    font-size: 1.2vw;
 
 
 	/*background-color: #cdc673;
@@ -297,55 +315,49 @@ button{
     border-radius: 20%;*/
 	position: absolute;
 	left:  50vw;
-	top:  70vh;
+	top:  60vh;
     display: inline-block;
 }
 
 #easy_button:hover{
-    background-color: #1f5514;
-    border-color: #1f5514;
-    color: #cdc673;
+ 
 }
 
 #medium_button{
-	height: 5vw;
-    width: 10vw;
+	height: 5vh;
+    width: 12vw;
     color: black;
     font-family: 'Press Start 2P', cursive;
-    font-size: 1vw;
+    font-size: 1.2vw;
 
 
 
 	position: absolute;
 	left:  62.5vw;
-	top:  70vh;
+	top:  60vh;
     display: inline-block;
 }
 
 #medium_button:hover{
-    background-color: #1f5514;
-    border-color: #1f5514;
-    color: #cdc673;
+  
 }
 
 #hard_button{
-	height: 5vw;
-    width: 10vw;
+	height: 5vh;
+    width: 12vw;
     color: black;
     font-family: 'Press Start 2P', cursive;
-    font-size: 1vw;
+    font-size: 1.2vw;
 
 
 
 	position: absolute;
 	left:  75vw;
-	top:  70vh;
+	top:  60vh;
     display: inline-block;
 }
 #hard_button:hover{
-    background-color: #1f5514;
-    border-color: #1f5514;
-    color: #cdc673;
+ 
 }
 
 

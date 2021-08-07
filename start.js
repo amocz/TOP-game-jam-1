@@ -26,61 +26,71 @@ const hardButton = document.querySelector('#hard_button')
 //});
 
 let difficulty = "easy";
-easyButton.style.color = "white";
-easyButton.style.borderColor = "#cdc673";
-easyButton.style.backgroundColor = "#cdc673"
+easyButton.style.backgroundImage = "url('../TOP-game-jam-1/assets/button.png')";
+    easyButton.style.backgroundSize = "contain";
+    easyButton.style.backgroundPosition = "center";
+    easyButton.style.backgroundRepeat = "no-repeat";
 
 
 easyButton.addEventListener("mouseenter",() =>{
     if(difficulty != "easy"){
-    easyButton.style.backgroundColor = "#1f5514";
-    easyButton.style.color = "#cdc673";
+    easyButton.style.backgroundImage = "url('../TOP-game-jam-1/assets/button_hover.png')";
+    easyButton.style.backgroundSize = "contain";
+    easyButton.style.backgroundPosition = "center";
+    easyButton.style.backgroundRepeat = "no-repeat";
     }
 });
 
     easyButton.addEventListener("mouseleave",() =>{
     if(difficulty != "easy"){
-    easyButton.style.backgroundColor = "transparent";
+    easyButton.style.background = "transparent";
     easyButton.style.color = "black";}
 });
 
 
     mediumButton.addEventListener("mouseenter",() =>{
     if(difficulty != "medium"){
-    mediumButton.style.backgroundColor = "#1f5514";
-    mediumButton.style.color = "#cdc673";}
+    mediumButton.style.backgroundImage = "url('../TOP-game-jam-1/assets/button_hover.png')";
+    mediumButton.style.backgroundSize = "contain";
+    mediumButton.style.backgroundPosition = "center";
+    mediumButton.style.backgroundRepeat = "no-repeat";}
 });
 
     mediumButton.addEventListener("mouseleave",() =>{
     if(difficulty != "medium"){
-    mediumButton.style.backgroundColor = "transparent";
+    mediumButton.style.background = "transparent";
     mediumButton.style.color = "black";}
 });
 
     hardButton.addEventListener("mouseenter",() =>{
     if(difficulty != "hard"){
-    hardButton.style.backgroundColor = "#1f5514";
-    hardButton.style.color = "#cdc673";}
+    hardButton.style.backgroundImage = "url('../TOP-game-jam-1/assets/button_hover.png')";
+    hardButton.style.backgroundSize = "contain";
+    hardButton.style.backgroundPosition = "center";
+    hardButton.style.backgroundRepeat = "no-repeat";}
 });
 
     hardButton.addEventListener("mouseleave",() =>{
     if(difficulty != "hard"){
-    hardButton.style.backgroundColor = "transparent";
+    hardButton.style.background = "transparent";
     hardButton.style.color = "black";}
 });
 
 
 easyButton.addEventListener("click",() =>{
     difficulty = "easy";
-    easyButton.style.color = "white";
+    easyButton.style.backgroundImage = "url('../TOP-game-jam-1/assets/button.png')";
+    easyButton.style.backgroundSize = "contain";
+    easyButton.style.backgroundPosition = "center";
+    easyButton.style.backgroundRepeat = "no-repeat";
     mediumButton.style.color = "black";
     hardButton.style.color = "black";
-    easyButton.style.borderColor = "#cdc673";
-    easyButton.style.backgroundColor = "#cdc673"
     mediumButton.style.borderColor = "transparent";
     mediumButton.style.backgroundColor = "transparent";
     hardButton.style.borderColor = "transparent";
     hardButton.style.backgroundColor = "transparent";
+    mediumButton.style.background = "transparent";
+    hardButton.style.background = "transparent";
 
     
 
@@ -94,29 +104,37 @@ easyButton.addEventListener("click",() =>{
 mediumButton.addEventListener("click",() =>{
     difficulty = "medium";
     easyButton.style.color = "black";
-    mediumButton.style.color = "white";
+    mediumButton.style.backgroundImage = "url('../TOP-game-jam-1/assets/button.png')";
+    mediumButton.style.backgroundSize = "contain";
+    mediumButton.style.backgroundPosition = "center";
+    mediumButton.style.backgroundRepeat = "no-repeat";
     hardButton.style.color = "black";
     easyButton.style.borderColor = "transparent";
     easyButton.style.backgroundColor = "transparent";
-    mediumButton.style.borderColor = "#cdc673";
-    mediumButton.style.backgroundColor = "#cdc673";
     hardButton.style.borderColor = "transparent";
     hardButton.style.backgroundColor = "transparent";
+    easyButton.style.background = "transparent";
+    hardButton.style.background = "transparent";
 
 
 });
 
 hardButton.addEventListener("click",() =>{
     difficulty = "hard";
+    hardButton.style.backgroundImage = "url('../TOP-game-jam-1/assets/button.png')";
+    hardButton.style.backgroundSize = "contain";
+    hardButton.style.backgroundPosition = "center";
+    hardButton.style.backgroundRepeat = "no-repeat";
     easyButton.style.color = "black";
     mediumButton.style.color = "black";
-    hardButton.style.color = "white";
+
     easyButton.style.borderColor = "transparent";
     easyButton.style.backgroundColor = "transparent";
     mediumButton.style.borderColor = "transparent";
     mediumButton.style.backgroundColor = "transparent";
-    hardButton.style.borderColor = "#cdc673";
-    hardButton.style.backgroundColor = "#cdc673";
+    mediumButton.style.background = "transparent";
+    easyButton.style.background = "transparent";
+
 
     
 });
